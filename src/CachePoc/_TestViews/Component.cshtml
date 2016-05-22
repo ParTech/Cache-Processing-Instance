@@ -1,0 +1,17 @@
+﻿@model Sitecore.Mvc.Presentation.RenderingModel
+
+@{
+    var sw = System.Diagnostics.Stopwatch.StartNew();
+    var rnd = new System.Random();
+}
+
+<div style="border: 3px solid #000; padding: 10px; margin: 10px;">
+
+    <h1>@Model.Item["Title"]</h1>
+
+    @{ System.Threading.Thread.Sleep(rnd.Next(50, 100)); }
+
+    Rendered at: @DateTime.Now<br />
+    Render duration: @sw.ElapsedMilliseconds<br />
+
+</div>
